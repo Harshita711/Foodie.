@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant - Foodie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="restaurants-data.js"></script>
+    <script defer src="restaurant.js"></script>
+</head>
+<body>
+   <header>
+    <nav class="navbar">
+        <div class="wrapper">
+            <a href="index.html" class="logo">Foodie</a>
+            <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+            <div class="desktop-action">
+                <a href="bill.html" class="cart-icon">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                  <span class="cart-value">0</span>
+                </a>
+                <a href="#" class="btn">
+                    <i class="fa-solid fa-user"></i> Account
+                </a>
+                <a href="#" class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+            <ul class="mobile-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="bill.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+   </header>
+
+   <main>
+    <section class="restaurant-header">
+        <div class="wrapper">
+            <div class="restaurant-banner">
+                <div class="restaurant-info">
+                    <div class="restaurant-title-row">
+                        <h1 id="restaurant-name">Loading...</h1>
+                        <button id="favorite-btn" class="favorite-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                    <p id="restaurant-cuisines" class="restaurant-cuisines">Loading...</p>
+                    <div class="restaurant-meta">
+                        <span class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span id="restaurant-rating">0</span>
+                        </span>
+                        <span class="delivery-time">
+                            <i class="fa-solid fa-clock"></i>
+                            <span id="restaurant-time">0</span> mins
+                        </span>
+                        <span class="price-range">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            <span id="restaurant-price">0</span> for two
+                        </span>
+                    </div>
+                    <p id="restaurant-address" class="restaurant-address">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Loading...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers-section" id="offers-section" style="display: none;">
+        <div class="wrapper">
+            <h3><i class="fa-solid fa-tag"></i> Offers for you</h3>
+            <div class="offers-carousel" id="offers-carousel"></div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="wrapper">
+            <div class="menu-container">
+                <div class="menu-sidebar">
+                    <h3>Menu Categories</h3>
+                    <div id="category-list" class="category-list"></div>
+                </div>
+
+                <div class="menu-content">
+                    <div class="menu-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="menu-search" placeholder="Search for dishes">
+                    </div>
+
+                    <div id="menu-items" class="menu-items"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+   </main>
+
+   <div id="cart-float" class="cart-float" style="display: none;">
+    <div class="cart-float-content">
+        <div class="cart-float-info">
+            <span id="cart-items-count">0 items</span>
+            <span id="cart-total-price">₹0</span>
+        </div>
+        <a href="bill.html" class="cart-float-btn">
+            View Cart <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+   </div>
+
+   <footer>
+    <div class="wrapper">
+        <div class="footer-wrapper">
+            <div class="footer-col">
+                <a href="#" class="logo">Foodie</a>
+                <p style="margin-top: 1rem;">Order food from your favorite restaurants</p>
+            </div>
+            <ul class="footer-col">
+                <li><h4>Company</h4></li>
+                <li style="margin-top: 1rem;"><a href="#" class="footer-link">About us</a></li>
+            </ul>
+            <ul class="footer-col">
+                <li><h4>Contact</h4></li>
+                <li style="margin-top: 1rem;"><a href="#" class="footer-link">Help & Support</a></li>
+            </ul>
+        </div>
+    </div>
+   </footer>
+
+</body>
+</html>

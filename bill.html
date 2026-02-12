@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie - Bill</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+<script defer src="bill.js"></script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+  <nav class="navbar">
+    <div class="wrapper">
+
+      <a href="index.html" class="logo">Foodie</a>
+
+      <ul class="navlist">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#reviews">About us</a></li>
+        <li><a href="index.html#subscribe">Contacts</a></li>
+      </ul>
+
+      <div class="desktop-action">
+        <a href="bill.html" class="cart-icon active">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-value">0</span>
+        </a>
+
+        <a href="#" class="btn">
+          Sign In
+          &nbsp;
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+
+        <a href="#" class="hamburger">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+
+<div class="bill-container">
+  <div class="bill-header">
+    <h2 class="invoice-title">
+      <i class="fa-solid fa-receipt"></i>
+      Your Order Summary
+    </h2>
+    <p class="bill-subtitle">Review your items and proceed to checkout</p>
+  </div>
+
+  <!-- Empty Cart Message -->
+  <div id="empty-cart" class="empty-cart" style="display: none;">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <h3>Your cart is empty</h3>
+    <p>Add some delicious items from our menu!</p>
+    <a href="index.html#menu" class="btn">Browse Menu</a>
+  </div>
+
+  <!-- Cart Items -->
+  <div id="bill-items-container">
+    <div class="items-header">
+      <h3><i class="fa-solid fa-utensils"></i> Order Items</h3>
+    </div>
+    <div id="bill-items"></div>
+  </div>
+
+  <!-- Coupon Section -->
+  <div class="coupon-section">
+    <div class="coupon-header">
+      <i class="fa-solid fa-ticket"></i>
+      <span>Apply Coupon Code</span>
+    </div>
+    <div class="coupon-input-group">
+      <input type="text" id="coupon-code" placeholder="Enter coupon code" />
+      <button id="apply-coupon" class="coupon-btn">Apply</button>
+    </div>
+    <div id="coupon-message" class="coupon-message"></div>
+    <div class="available-coupons">
+      <p class="coupons-title">Available Offers:</p>
+      <div class="coupon-tags">
+        <span class="coupon-tag" data-code="FOOD10">FOOD10 - 10% OFF</span>
+        <span class="coupon-tag" data-code="SAVE20">SAVE20 - ₹20 OFF</span>
+        <span class="coupon-tag" data-code="FEAST50">FEAST50 - ₹50 OFF on ₹500+</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bill Summary -->
+  <div class="summary">
+    <h3 class="summary-title">
+      <i class="fa-solid fa-file-invoice-dollar"></i>
+      Bill Details
+    </h3>
+    <div class="summary-item">
+      <span><i class="fa-solid fa-basket-shopping"></i> Item Total</span>
+      <span id="subtotal">₹0</span>
+    </div>
+    <div class="summary-item delivery">
+      <span><i class="fa-solid fa-motorcycle"></i> Delivery Fee</span>
+      <span id="delivery-fee">₹40</span>
+    </div>
+    <div class="summary-item discount" id="discount-row" style="display: none;">
+      <span><i class="fa-solid fa-tags"></i> Discount</span>
+      <span id="discount" class="discount-amount">- ₹0</span>
+    </div>
+    <div class="summary-item">
+      <span><i class="fa-solid fa-percent"></i> GST (18%)</span>
+      <span id="gst">₹0</span>
+    </div>
+    <div class="summary-divider"></div>
+    <div class="summary-item total">
+      <span><i class="fa-solid fa-wallet"></i> Total Amount</span>
+      <span id="total">₹0</span>
+    </div>
+    <div class="savings-badge" id="savings-badge" style="display: none;">
+      <i class="fa-solid fa-piggy-bank"></i>
+      You're saving <span id="savings-amount">₹0</span> on this order!
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <a href="index.html#menu" class="btn secondary-btn">
+      <i class="fa-solid fa-plus"></i> Add More Items
+    </a>
+    <button class="pay-btn">
+      <i class="fa-solid fa-credit-card"></i> Proceed to Payment
+    </button>
+  </div>
+</div>
+
+</body>
+</html>

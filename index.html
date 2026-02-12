@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Order Food Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="restaurants-data.js"></script>
+    <script defer src="home.js"></script>
+</head>
+<body>
+   <header>
+    <nav class="navbar">
+        <div class="wrapper">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">Foodie</a>
+
+            <!-- MENU -->
+            <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+
+            <!-- RIGHT SIDE -->
+            <div class="desktop-action">
+
+                <a href="restaurants.html" class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <a href="favorites.html" class="favorites-icon">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="favorites-count">0</span>
+                </a>
+
+                <a href="bill.html" class="cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-value">0</span>
+                </a>
+
+                <a href="restaurants.html" class="btn">Order Now</a>
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+
+   <main>
+    <section style="padding: 6rem 0; background: linear-gradient(135deg, #FF6B35 0%, #E55526 100%); color: white;">
+        <div class="wrapper" style="text-align: center;">
+            <h1 style="font-size: 4rem; margin-bottom: 1.5rem; color: white;">Enjoy Your Delicious <span style="color: #FFD700;">Food</span></h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.95;">We will fill your tummy with delicious food with fast delivery.</p>
+            <a href="restaurants.html" class="btn" style="font-size: 1.2rem; padding: 1rem 2.5rem;">Order Now</a>
+        </div>
+    </section>
+
+    <section style="padding: 5rem 0;">
+        <div class="wrapper">
+            <div style="text-align: center; margin-bottom: 3rem;">
+               <h5 style="color: #FF6B35; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Our Services</h5>
+               <h2 style="font-size: 3rem; color: #1F2937;">How It Works</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; text-align: center;">
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div style="margin-bottom: 1.5rem;"><img src="images/easy-to-order.png" alt="Easy to Order" style="width: 120px; margin: 0 auto;"></div>
+                    <h3 style="margin-bottom: 1rem;">Easy to Order</h3>
+                    <p style="color: #6B7280;">You only need a few steps in ordering food.</p>
+                </div>
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div style="margin-bottom: 1.5rem;"><img src="images/best-quality.png" alt="Best Quality" style="width: 120px; margin: 0 auto;"></div>
+                    <h3 style="margin-bottom: 1rem;">Best Quality</h3>
+                    <p style="color: #6B7280;">Not only fast for us quality is also number one.</p>
+                </div>
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div style="margin-bottom: 1.5rem;"><img src="images/fast-delivery.png" alt="Fast Delivery" style="width: 120px; margin: 0 auto;"></div>
+                    <h3 style="margin-bottom: 1rem;">Fast Delivery</h3>
+                    <p style="color: #6B7280;">Delivery that is always on time even faster.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 5rem 0; background: white;">
+        <div class="wrapper">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h5 style="color: #FF6B35; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Our Menu</h5>
+                <h2 style="font-size: 3rem; color: #1F2937;">Popular Dishes</h2>
+            </div>
+            <div id="popular-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;"></div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="restaurants.html" class="btn" style="font-size: 1.1rem;">View All Restaurants</a>
+            </div>
+        </div>
+    </section>
+   </main>
+
+   <footer>
+    <div class="wrapper">
+        <div class="footer-wrapper">
+            <div class="footer-col">
+                <a href="#" class="logo">Foodie</a>
+                <p style="margin-top: 1rem;">We will fill your tummy with delicious food with fast delivery.</p>
+            </div>
+            <ul class="footer-col">
+                <li><h4>Company</h4></li>
+                <li style="margin-top: 1rem;"><a href="#" class="footer-link">About us</a></li>
+                <li style="margin-top: 0.5rem;"><a href="#" class="footer-link">Careers</a></li>
+            </ul>
+            <ul class="footer-col">
+                <li><h4>Contact</h4></li>
+                <li style="margin-top: 1rem;"><a href="#" class="footer-link">Help & Support</a></li>
+                <li style="margin-top: 0.5rem;"><a href="#" class="footer-link">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+   </footer>
+</body>
+</html>

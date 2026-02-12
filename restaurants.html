@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants - Foodie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="restaurants-data.js"></script>
+    <script defer src="restaurants.js"></script>
+</head>
+<body>
+   <header>
+    <nav class="navbar">
+        <div class="wrapper">
+            <a href="index.html" class="logo">Foodie</a>
+            <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+            <div class="desktop-action">
+                <a href="restaurants.html" class="search-icon active"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="favorites.html" class="favorites-icon"><i class="fa-solid fa-heart"></i><span class="favorites-count">0</span></a>
+                <a href="bill.html" class="cart-icon"><i class="fa-solid fa-bag-shopping"></i><span class="cart-value">0</span></a>
+                <a href="#" class="btn"><i class="fa-solid fa-user"></i> Account</a>
+                <a href="#" class="hamburger"><i class="fa-solid fa-bars"></i></a>
+            </div>
+            <ul class="mobile-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </div>
+    </nav>
+   </header>
+
+   <main>
+    <section class="hero-section-search">
+        <div class="wrapper">
+            <div class="hero-content-search">
+                <h1>Order food from your favorite <span>restaurants</span></h1>
+                <p class="hero-subtitle">Discover the best food & drinks near you</p>
+                
+                <div class="search-container">
+                    <div class="address-selector">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" id="location-input" placeholder="Enter delivery address" readonly>
+                        <button id="change-location" class="location-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search-input" placeholder="Search for restaurants or cuisines">
+                        <button id="search-btn" class="search-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filters-section">
+        <div class="wrapper">
+            <div class="filter-chips">
+                <button class="filter-chip active" data-filter="all"><i class="fa-solid fa-border-all"></i> All</button>
+                <button class="filter-chip" data-filter="rating"><i class="fa-solid fa-star"></i> Rating 4.0+</button>
+                <button class="filter-chip" data-filter="fast"><i class="fa-solid fa-bolt"></i> Fast Delivery</button>
+                <button class="filter-chip" data-filter="offers"><i class="fa-solid fa-tag"></i> Offers</button>
+                <button class="filter-chip" data-filter="pure-veg"><i class="fa-solid fa-leaf"></i> Pure Veg</button>
+                <button class="filter-chip" data-filter="price-low"><i class="fa-solid fa-indian-rupee-sign"></i> Price: Low to High</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="restaurants-section">
+        <div class="wrapper">
+            <h2 class="section-title">Restaurants near you</h2>
+            <div id="restaurants-grid" class="restaurants-grid"></div>
+            <div id="no-results" class="no-results" style="display: none;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No restaurants found</h3>
+                <p>Try adjusting your filters or search term</p>
+            </div>
+        </div>
+    </section>
+   </main>
+
+   <div id="address-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-location-dot"></i> Choose Delivery Location</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="saved-addresses" id="saved-addresses"></div>
+            <button id="add-new-address" class="btn add-address-btn">
+                <i class="fa-solid fa-plus"></i> Add New Address
+            </button>
+        </div>
+    </div>
+   </div>
+
+   <div id="add-address-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-map-marked-alt"></i> Add Delivery Address</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="address-form">
+                <div class="form-group">
+                    <label>Address Type</label>
+                    <div class="address-type-selector">
+                        <button type="button" class="address-type-btn active" data-type="home">
+                            <i class="fa-solid fa-house"></i> Home
+                        </button>
+                        <button type="button" class="address-type-btn" data-type="work">
+                            <i class="fa-solid fa-briefcase"></i> Work
+                        </button>
+                        <button type="button" class="address-type-btn" data-type="other">
+                            <i class="fa-solid fa-location-dot"></i> Other
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Complete Address</label>
+                    <textarea id="address-street" placeholder="House No., Building, Street" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Landmark (Optional)</label>
+                    <input type="text" id="address-landmark" placeholder="E.g., Near park">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" id="address-city" placeholder="City" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pincode</label>
+                        <input type="text" id="address-pincode" placeholder="Pincode" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Save Address</button>
+            </form>
+        </div>
+    </div>
+   </div>
+
+   <footer>
+    <div class="wrapper">
+        <div class="footer-wrapper">
+            <div class="footer-col">
+                <a href="#" class="logo">Foodie</a>
+                <p style="margin-top: 1rem;">Order food from your favorite restaurants</p>
+            </div>
+            <ul class="footer-col">
+                <li><h4>Company</h4></li>
+                <li style="margin-top: 1rem;"><a href="#" class="footer-link">About us</a></li>
+            </ul>
+            <ul class="footer-col">
+                <li><h4>Contact</h4></li>
+                <li style="margin-top: 1rem;"><a href="#" class="footer-link">Help & Support</a></li>
+            </ul>
+        </div>
+    </div>
+   </footer>
+</body>
+</html>

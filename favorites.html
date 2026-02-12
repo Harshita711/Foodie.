@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites - Foodie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="favorites.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="wrapper">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">Foodie</a>
+
+            <!-- MENU -->
+            <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+
+            <!-- RIGHT SIDE -->
+            <div class="desktop-action">
+
+                <a href="restaurants.html" class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <a href="favorites.html" class="favorites-icon">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="favorites-count">0</span>
+                </a>
+
+                <a href="bill.html" class="cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-value">0</span>
+                </a>
+
+                <a href="restaurants.html" class="btn">Order Now</a>
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+
+   <main class="favorites-page">
+    <div class="wrapper">
+        <h1 class="page-title"><i class="fa-solid fa-heart"></i> Your Favorites</h1>
+
+        <!-- Empty State -->
+        <div id="empty-favorites" class="empty-favorites">
+
+    <div class="empty-emoji">😢</div>
+
+    <h2 class="empty-title">You haven't added anything to favorites!</h2>
+
+    <p class="empty-text">
+        Save your favorite dishes and restaurants here for quick access.
+    </p>
+
+    <a href="restaurants.html" class="btn empty-btn">
+        Browse Restaurants
+    </a>
+
+</div>
+
+
+        <!-- Favorites Content -->
+        <div id="favorites-content" style="display: none;">
+            <div id="favorites-grid" class="favorites-grid"></div>
+        </div>
+    </div>
+   </main>
+
+   <footer>
+    <div class="footer-container">
+        <div class="wrapper">
+            <div class="footer-wrapper ">
+                <div class="footer-col">
+                    <a href="#" class="logo">Foodie</a>
+                    <p class="mt-one-half">Order food from your favorite restaurants</p>
+                </div>
+                <ul class="footer-col">
+                    <li><h4>Company</h4></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">About us</a></li>
+                </ul>
+                <ul class="footer-col">
+                    <li><h4>Contact</h4></li>
+                    <li class="mt-one-half"><a href="#" class="footer-link">Help & Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   </footer>
+</body>
+</html>
