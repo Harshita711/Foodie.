@@ -7,7 +7,7 @@ It simulates a complete restaurant browsing and ordering experience including ca
 
 ## 🌐 Live Demo
 
-🔗 https://yourusername.github.io/foodie-website/
+🔗 https://harshita711.github.io/Foodie./
 
 ---
 
